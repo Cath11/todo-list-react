@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import TodoItem from "./components/TodoItem";
 import TodoForm from "./components/TodoForm";
+import "./App.css";
+
 
 //variables
 
@@ -17,14 +19,21 @@ const addTodo = (text)=> {
   setTodos(newTodos);
 };
 
+
+
+
+
+
 //template
   return ( 
-  <div>
+  <div className="app">
+    <div className="todo-list">
     <h1>My to do list</h1>
     {todos.map((todo, index)=> (
       <TodoItem todo={todo} key={index}/>
     ))}
     <TodoForm addTodo={addTodo}/>
+      </div>
   </div>
   );
 }
